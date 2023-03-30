@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DestroyEnemy : MonoBehaviour
 {
+    //public GameObject bulletDestroyPrefab;
+    //public GameObject enemyDestroyPrefab;
     public int hitPoints;
     // Start is called before the first frame update
     void Start()
@@ -25,11 +27,14 @@ public class DestroyEnemy : MonoBehaviour
             Debug.Log("Bullet has hit the enemy!!");
             // Destory bullet
             Destroy(collision.gameObject);
+            //Instantiate(bulletDestroyPrefab, transform.position, Quaternion.identity);
             hitPoints--;
             if (hitPoints == 0)
             {
                 // Destroy the enemy
                 Destroy(gameObject);
+                FindObjectOfType<PlayerScore>().IncreaseScore();
+                //Instantiate(enemyDestroyPrefab, gameObject.transform.position, Quaternion.identity);
             }
         }
         

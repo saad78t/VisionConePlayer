@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
+    //public GameObject bulletDestroyPrefab;
     public GameObject bulletPrefab;
     public Transform fireSpawnPoint;
     public float fireRate = 0.25f;
@@ -26,6 +27,7 @@ public class PlayerShooting : MonoBehaviour
                 nextBullet = Time.time + fireRate;
                 GameObject bullet = Instantiate(bulletPrefab,fireSpawnPoint.position, Quaternion.identity);
                 Destroy(bullet, 2f);
+                //Instantiate(bulletDestroyPrefab, transform.position, Quaternion.identity);
                 bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
             }
         }
