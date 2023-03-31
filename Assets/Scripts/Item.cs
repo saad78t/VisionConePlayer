@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Drop it into items to be selected 
 public class Item : MonoBehaviour
 {
     public GameObject objectWithPlayer;
 
     public RawImage objectRawImage;
+
+    public string type = "Wrench"; // Assign Type String for items.
 
     void Start()
     {
@@ -21,7 +24,6 @@ public class Item : MonoBehaviour
     {
         gameObject.SetActive(false);
         objectWithPlayer.SetActive(true);
-        objectWithPlayer.name = "Saad";
         objectRawImage.enabled = true;
     }
 }

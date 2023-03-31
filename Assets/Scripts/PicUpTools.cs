@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Drop it into an item
 public class PicUpTools : MonoBehaviour
 {
     public GameObject objectWithPlayer,PicUpText;
     
     public RawImage objectRawImage;
-    
+     
     void Start()
     {
         objectWithPlayer.SetActive(false);
@@ -27,6 +28,7 @@ public class PicUpTools : MonoBehaviour
                 objectWithPlayer.SetActive(true);
                 objectRawImage.enabled = true;
                 PicUpText.SetActive(false);
+                PlayerTool.ItemPickedUp();
             }
         }
     }

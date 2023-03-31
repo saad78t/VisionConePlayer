@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
     private int Health;
     private const int MAX_HEALTH = 100;
     public Rigidbody rd ;
+
+
     private void Start()
     {
         Health = MAX_HEALTH;
@@ -20,7 +22,6 @@ public class PlayerHealth : MonoBehaviour
     {
             if (Input.GetKeyDown(KeyCode.H))
             {   
-                 // the key H was pressed
                  IncreaseHealth(10);              
             }
     }
@@ -43,11 +44,10 @@ public class PlayerHealth : MonoBehaviour
 
     public void IncreaseHealth(int amountOfHealth)
     {
-        if (rd.gameObject.CompareTag("Health"))
-        {
+        //if (rd.gameObject.CompareTag("Health"))
+        //{
             Health += amountOfHealth;
             health_Slider.value = Health;
-        }
+        //}
     }
-
 }

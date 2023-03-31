@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 78247749}
   - component: {fileID: 78247748}
   - component: {fileID: 78247747}
-  - component: {fileID: 78247750}
+  - component: {fileID: 78247751}
   m_Layer: 0
   m_Name: screwdriver (1)
   m_TagString: Untagged
@@ -420,8 +420,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 7
-  m_Height: 7
+  m_Radius: 3
+  m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &78247748
@@ -474,7 +474,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78247744}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &78247750
+--- !u!114 &78247751
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -488,6 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectWithPlayer: {fileID: 1654548488}
   objectRawImage: {fileID: 1998331445}
+  type: Wrench
 --- !u!1 &155699651
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,7 +2919,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299934305}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.65, y: 0.66, z: -1.67}
+  m_LocalPosition: {x: -8.65, y: 0.66, z: 1.4}
   m_LocalScale: {x: 1.654, y: 1, z: 1.5206}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3787,8 +3788,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 7
-  m_Height: 7
+  m_Radius: 3
+  m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1727957955
@@ -3848,7 +3849,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727957951}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8cf4aa9eb29e604b91562826fb52f07, type: 3}
   m_Name: 
@@ -4039,7 +4040,6 @@ GameObject:
   - component: {fileID: 1789689619}
   - component: {fileID: 1789689618}
   - component: {fileID: 1789689617}
-  - component: {fileID: 1789689616}
   - component: {fileID: 1789689620}
   m_Layer: 0
   m_Name: cutter (1)
@@ -4063,21 +4063,6 @@ Transform:
   m_Father: {fileID: 433211822}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -87.708}
---- !u!114 &1789689616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789689614}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c23d1d47231a2f64aa8e8d44f782489c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectWithPlayer: {fileID: 2119372843}
-  PicUpText: {fileID: 1954660470}
-  objectRawImage: {fileID: 488482262}
 --- !u!136 &1789689617
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4088,8 +4073,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 7
-  m_Height: 7
+  m_Radius: 3
+  m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1789689618
@@ -4156,6 +4141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectWithPlayer: {fileID: 2119372843}
   objectRawImage: {fileID: 488482262}
+  type: Wrench
 --- !u!1 &1811941362
 GameObject:
   m_ObjectHideFlags: 0
