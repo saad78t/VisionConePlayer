@@ -6,16 +6,19 @@ public class OverLap : MonoBehaviour
 {
     public float radius;
     Collider[] Players;
-    //public LayerMask m_LayerMask;
+    public PlayerHealth increase;
 
     void Start()
     {
-        
+       
     }
 
     private void FixedUpdate()
     {
-        CheckArea();
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            CheckArea();
+        }
     }
 
     private void CheckArea()
@@ -26,11 +29,7 @@ public class OverLap : MonoBehaviour
         {
             if (player.CompareTag("Player"))
             {
-                Debug.Log("The player entered the zone");
-            }
-            else
-            {
-                Debug.Log("the player out of the zone");
+               increase.IncreaseHealth(10);
             }
         }
     }

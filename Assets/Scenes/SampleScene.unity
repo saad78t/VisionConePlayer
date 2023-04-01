@@ -308,6 +308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 482187492418287842, guid: 7d22313ca84cef14a89cf26e0d92e2fd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 482187492418287843, guid: 7d22313ca84cef14a89cf26e0d92e2fd, type: 3}
       propertyPath: m_Size.x
       value: 1.75
@@ -502,8 +506,9 @@ GameObject:
   - component: {fileID: 104413806}
   - component: {fileID: 104413805}
   - component: {fileID: 104413804}
+  - component: {fileID: 104413808}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -521,7 +526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9779764d862021f4190cca58ee60bbde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 4.98
+  radius: 1.27
+  inc: {fileID: 1020446535}
 --- !u!23 &104413805
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -587,6 +593,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &104413808
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104413803}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &155699651
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,6 +2734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 482187492418287842, guid: 7d22313ca84cef14a89cf26e0d92e2fd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 482187492418287854, guid: 7d22313ca84cef14a89cf26e0d92e2fd, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -3357,6 +3380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health
       objectReference: {fileID: 0}
+    - target: {fileID: 482187492418287842, guid: 7d22313ca84cef14a89cf26e0d92e2fd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 482187492418287854, guid: 7d22313ca84cef14a89cf26e0d92e2fd, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -3400,6 +3427,10 @@ PrefabInstance:
     - target: {fileID: 482187492418287854, guid: 7d22313ca84cef14a89cf26e0d92e2fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797472947435113959, guid: 7d22313ca84cef14a89cf26e0d92e2fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1797472947435113959, guid: 7d22313ca84cef14a89cf26e0d92e2fd, type: 3}
       propertyPath: m_TagString
@@ -4740,6 +4771,10 @@ PrefabInstance:
     - target: {fileID: 482187492418287842, guid: 7d22313ca84cef14a89cf26e0d92e2fd, type: 3}
       propertyPath: m_Name
       value: Health (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 482187492418287842, guid: 7d22313ca84cef14a89cf26e0d92e2fd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 482187492418287854, guid: 7d22313ca84cef14a89cf26e0d92e2fd, type: 3}
       propertyPath: m_RootOrder

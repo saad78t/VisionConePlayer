@@ -30,12 +30,12 @@ public class PlayerHealth : MonoBehaviour
         //  IncreaseHealth(10);
         //}
 
-        if (Input.GetButtonDown("Health"))
-        {
-            timer = Time.time;
-            IncreaseHealth(10);
-            Debug.Log(timer);
-        }
+        //if (Input.GetButtonDown("Health"))
+        //{
+        //    timer = Time.time;
+        //    IncreaseHealth(10);
+        //    Debug.Log(timer);
+        //}
 
         //if (Input.GetButtonUp("Health"))
         //{
