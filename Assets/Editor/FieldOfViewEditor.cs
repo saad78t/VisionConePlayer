@@ -22,41 +22,5 @@ public class FieldOfViewEditor : Editor {
                 Handles.DrawLine(fow.transform.position, visibleTarget.position);//Null REFRENCE SOMETIMES
         }
 
-        //OnPostRender();
     }
-
-    //public Material mat;
-
-    //void OnPostRender()
-    //{
-    //    FieldOfView fow = (FieldOfView)target;
-        //if (!mat)
-        //{
-        //    Debug.LogError("Please Assign a material on the inspector");
-        //    return;
-        //}
-    //    GL.Begin(GL.LINES);
-    //    mat.SetPass(0);
-    //    foreach (Transform visibleTarget in fow.visibleTargets)
-    //    {
-    //        GL.PushMatrix();
-    //        GL.LoadOrtho();
-    //        GL.Vertex(fow.transform.position);
-    //        GL.Vertex(fow.transform.position + visibleTarget.position * 5);
-    //        GL.End();
-    //        GL.PopMatrix();
-    //    }
-    //}
-
-    //private void OnDrawGizmos()
-    //{
-    //    FieldOfView fow = (FieldOfView)target;
-    //    Gizmos.color = Color.red;
-    //    foreach (Transform visibleTarget in fow.visibleTargets)
-    //    {
-    //        Gizmos.DrawLine(fow.transform.position, visibleTarget.position);
-    //        Gizmos.DrawIcon(fow.transform.position+ visibleTarget.position,"CrossIcon");
-    //    }
-    //}
-
 }

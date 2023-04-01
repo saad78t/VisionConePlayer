@@ -25,20 +25,17 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-          IncreaseHealth(10);
-        }
-
-        //if (Input.GetButtonDown("Health"))
+        //if (Input.GetKeyDown(KeyCode.H))
         //{
-        //    timer = timer * Time.deltaTime;
-        //    Debug.Log(timer);
-        //    if ( timer >= 3)
-        //    {
-        //       Debug.Log("CONSEGUIDOOOOOOOOOOOOOOOOOOOOOOOOOO");
-        //    }
+        //  IncreaseHealth(10);
         //}
+
+        if (Input.GetButtonDown("Health"))
+        {
+            timer = Time.time;
+            IncreaseHealth(10);
+            Debug.Log(timer);
+        }
 
         //if (Input.GetButtonUp("Health"))
         //{
@@ -51,7 +48,6 @@ public class PlayerHealth : MonoBehaviour
         //        Debug.Log("CONSEGUIDOOOOOOOOOOOOOOOOOOOOOOOOOO");
         //    }
         //}
-
     }
 
 
@@ -83,12 +79,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Health"))
-        {
-            IncreaseHealth(10);
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Health"))
+    //    {
+    //        IncreaseHealth(10);
+    //    }
+    //}
 
 }
