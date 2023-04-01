@@ -18,7 +18,8 @@ public class FieldOfViewEditor : Editor {
         Handles.color = Color.red;
         foreach (Transform visibleTarget in fow.visibleTargets)
         {
-            Handles.DrawLine(fow.transform.position, visibleTarget.position);
+            if(visibleTarget!=null) //ask Antti about this condition
+                Handles.DrawLine(fow.transform.position, visibleTarget.position);//Null REFRENCE SOMETIMES
         }
 
         //OnPostRender();

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//drop it to the player
+//drop it into the player
 public class PlayerScript : MonoBehaviour
 {
     //private Dictionary<Item, int> itemDictionary = new Dictionary<Item, int>(); // Define dictionary like this
