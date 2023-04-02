@@ -7,14 +7,22 @@ public class PlayerScript : MonoBehaviour
 {
     //private Dictionary<Item, int> itemDictionary = new Dictionary<Item, int>(); // Define dictionary like this
     private Dictionary<string, int> itemDictionary = new Dictionary<string, int>();
+    public GameObject PicUpText;
+
+    private void Start()
+    {
+        PicUpText.SetActive(false);
+    }
 
     private void OnTriggerStay(Collider other)
     {
+        PicUpText.SetActive(true);
         if (Input.GetKeyDown(KeyCode.E)) // First Check KEY cuz of optimization
         {
             if (other.gameObject.TryGetComponent(out Item item))
             {
                 item.PickUp();
+                PicUpText.SetActive(false);
                 if (itemDictionary.ContainsKey(item.type))
                 {
                     itemDictionary[item.type]++;
@@ -32,4 +40,10 @@ public class PlayerScript : MonoBehaviour
 
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        PicUpText.SetActive(false);
+    }
+
 }

@@ -6,11 +6,6 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    float timer;
-    float timerB = 0;
-
-
-
     public Slider health_Slider;
     private int Health;
     private const int MAX_HEALTH = 100;
@@ -25,29 +20,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.H))
-        //{
-        //  IncreaseHealth(10);
-        //}
 
-        //if (Input.GetButtonDown("Health"))
-        //{
-        //    timer = Time.time;
-        //    IncreaseHealth(10);
-        //    Debug.Log(timer);
-        //}
-
-        //if (Input.GetButtonUp("Health"))
-        //{
-        //    timerB = Time.time;
-        //    Debug.Log(timerB + " ESPACIOSSS " + timer);
-        //    if (timerB - timer >= 3)
-        //    {
-        //        timer = 0;
-        //        timerB = 0;
-        //        Debug.Log("CONSEGUIDOOOOOOOOOOOOOOOOOOOOOOOOOO");
-        //    }
-        //}
     }
 
 
