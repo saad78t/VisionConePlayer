@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Drop it into a game object to increase the player's health
 public class OverLap : MonoBehaviour
 {
     float timer = 0;
-    float timerB = 0;
+    float interval = 0;
+    bool shouldHeal;
 
     public float radius;
     Collider[] Players;
@@ -20,29 +22,28 @@ public class OverLap : MonoBehaviour
     private void FixedUpdate()
     {
         HealthText.SetActive(true);
-        //if (Input.GetKeyDown(KeyCode.H))
-        //{
-        //    CheckArea();
-        //    HealthText.SetActive(false);
-        //}
 
-
-        if (Input.GetButtonDown("Health"))
+        if (Input.GetKeyDown(KeyCode.H))
         {
-            timer = Time.time;
-            CheckArea();
-            Debug.Log(timer);
+            timer = 0;
+            shouldHeal = true;
         }
 
-        if (Input.GetButtonUp("Health"))
+        if (Input.GetKey(KeyCode.H))
         {
-            timerB = Time.time;
-            Debug.Log(timerB + " SPACE " + timer);
-            if (timerB - timer >= 3)
+            if (shouldHeal)
             {
-                timer = 0;
-                timerB = 0;
-                Debug.Log("Stopped");
+                timer += Time.deltaTime;
+                interval += Time.deltaTime;
+
+                if (interval >= 0.1f)
+                {
+                    CheckArea();
+                    interval = 0;
+                }
+
+                if (timer >= 3)
+                    shouldHeal = false;
             }
         }
     }
