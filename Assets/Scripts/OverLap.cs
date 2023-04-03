@@ -5,6 +5,8 @@ using UnityEngine;
 //Drop it into a game object to increase the player's health
 public class OverLap : MonoBehaviour
 {
+    //float timerB = 0;
+
     float timer = 0;
     float interval = 0;
     bool shouldHeal;
@@ -46,6 +48,26 @@ public class OverLap : MonoBehaviour
                     shouldHeal = false;
             }
         }
+
+        //if (Input.GetButtonDown("Health"))
+        //{
+        //    timer = Time.time;
+        //    CheckArea();
+        //    Debug.Log(timer);
+        //}
+
+        //if (Input.GetButtonUp("Health"))
+        //{
+        //    timerB = Time.time;
+        //    Debug.Log(timerB + " SPACE " + timer);
+        //    if (timerB - timer >= 3)
+        //    {
+        //        timer = 0;
+        //        timerB = 0;
+        //        CheckArea();
+        //        Debug.Log("Stopped");
+        //    }
+        //}
     }
 
     private void CheckArea()
@@ -57,7 +79,7 @@ public class OverLap : MonoBehaviour
             
             if (player.CompareTag("Player"))
             {
-               increase.IncreaseHealth(10);
+               increase.IncreaseHealth(50);
             }
         }
     }

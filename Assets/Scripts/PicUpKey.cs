@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class PicUpKey : MonoBehaviour
 {
-    public GameObject keyObject, PicUpTextKey;
-
+    public GameObject keyObject, PicUpTextKey ;
+    
     public RawImage objectRawImageKey;
 
+    public bool keyCollected;
 
     void Start()
     {
         keyObject.SetActive(false);
         objectRawImageKey.enabled = false;
         PicUpTextKey.SetActive(false);
+        keyCollected= false;
     }
 
     private void OnTriggerStay(Collider other)
@@ -27,6 +29,8 @@ public class PicUpKey : MonoBehaviour
                 gameObject.SetActive(false);
                 keyObject.SetActive(true);
                 objectRawImageKey.enabled = true;
+                keyCollected = true;
+                Destroy(keyObject);
                 PicUpTextKey.SetActive(false);
             }
         }
