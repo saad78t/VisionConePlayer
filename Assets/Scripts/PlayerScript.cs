@@ -16,28 +16,29 @@ public class PlayerScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        PicUpText.SetActive(true);
-        if (Input.GetKeyDown(KeyCode.E)) // First Check KEY cuz of optimization
-        {
-            if (other.gameObject.TryGetComponent(out Item item))
+        if (other.gameObject.layer == 10) { 
+            PicUpText.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E)) // First Check KEY cuz of optimization
             {
-                item.PickUp();
-                PicUpText.SetActive(false);
-                if (itemDictionary.ContainsKey(item.type))
+                if (other.gameObject.TryGetComponent(out Item item))
                 {
-                    itemDictionary[item.type]++;
-                    Debug.Log($"{name} has {itemDictionary[item.type]} of {item.name}.");
-                }
-                else
-                {
-                    itemDictionary.Add(item.type, 1);
-                }
-                if (itemDictionary[item.type] == 2) // check count of picked item.
-                {
-                    Debug.Log($"Element: ({item.name}) have collected");
+                    item.PickUp();
+                    PicUpText.SetActive(false);
+                    if (itemDictionary.ContainsKey(item.type))
+                    {
+                        itemDictionary[item.type]++;
+                        Debug.Log($"{name} has {itemDictionary[item.type]} of {item.name}.");
+                    }
+                    else
+                    {
+                        itemDictionary.Add(item.type, 1);
+                    }
+                    if (itemDictionary[item.type] == 2) // check count of picked item.
+                    {
+                        Debug.Log($"Element: ({item.name}) have collected");
+                    }
                 }
             }
-
         }
     }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//Drop it into items to be selected 
+//Drop it onto items to be collected
 public class Item : MonoBehaviour
 {
     public GameObject objectWithPlayer;
@@ -24,6 +24,7 @@ public class Item : MonoBehaviour
     {
         gameObject.SetActive(false);
         objectWithPlayer.SetActive(true);
+        Destroy(objectWithPlayer);
         objectRawImage.enabled = true;
     }
 }

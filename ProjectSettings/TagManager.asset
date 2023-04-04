@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Bullet
   - EnemyBullet
-  - Health
   layers:
   - Default
   - TransparentFX
@@ -18,8 +17,8 @@ TagManager:
   - Targets
   - Unselectable
   - PlayerTarget
-  - 
-  - 
+  - Usable
+  - Health
   - 
   - 
   - 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//Drop it onto the key object to be collected
 public class PicUpKey : MonoBehaviour
 {
     public GameObject keyObject, PicUpTextKey ;

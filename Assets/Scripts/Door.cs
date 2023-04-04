@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Drop this script to the object in front of the door
+//Drop this script onto the object in front of the door
 public class Door : MonoBehaviour
 {
     public GameObject AnimeObject;
