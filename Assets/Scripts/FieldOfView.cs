@@ -10,8 +10,10 @@ public class FieldOfView : MonoBehaviour {
 
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
+    //public Renderer custRender;
 
-	[HideInInspector]
+
+    [HideInInspector]
 	public List<Transform> visibleTargets = new List<Transform>();
 
 	public float meshResolution;
@@ -27,8 +29,8 @@ public class FieldOfView : MonoBehaviour {
 		viewMesh = new Mesh ();
 		viewMesh.name = "View Mesh";
 		viewMeshFilter.mesh = viewMesh;
-
-		StartCoroutine ("FindTargetsWithDelay", .2f);
+        //custRender.enabled = false;
+        StartCoroutine ("FindTargetsWithDelay", .2f);
 	}
 
 
@@ -54,7 +56,11 @@ public class FieldOfView : MonoBehaviour {
 				float dstToTarget = Vector3.Distance (transform.position, target.position);
 				if (!Physics.Raycast (transform.position, dirToTarget, dstToTarget, obstacleMask)) {
 					visibleTargets.Add (target);
-				}
+                    //if(target != null)
+                    //{
+                    //    custRender.enabled = true;
+                    //}
+                }
 			}
 		}
 	}
@@ -176,4 +182,8 @@ public class FieldOfView : MonoBehaviour {
 		}
 	}
 
+    //void OnCollisionExit(Collision target)
+    //{
+    //    custRender.enabled =  false;
+    //}
 }
