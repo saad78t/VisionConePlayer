@@ -5,9 +5,9 @@ using UnityEngine;
 //Drop it into a game object to increase the player's health
 public class OverLap : MonoBehaviour
 {
-    //float timerB = 0;
-
-    float timer = 0;
+    float timer;
+    float holdDur = 3f;
+    
     float interval = 0;
     bool shouldHeal;
 
@@ -23,51 +23,49 @@ public class OverLap : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //HealthText.SetActive(true);
+        //Increasing the player health within 3 seconds
 
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            timer = 0;
-            shouldHeal = true;
-        }
-
-        if (Input.GetKey(KeyCode.H))
-        {
-            if (shouldHeal)
-            {
-                timer += Time.deltaTime;
-                interval += Time.deltaTime;
-
-                if (interval >= 0.1f)
-                {
-                    CheckArea();
-                    interval = 0;
-                }
-
-                if (timer >= 3)
-                    shouldHeal = false;
-            }
-        }
-
-        //if (Input.GetButtonDown("Health"))
+        //if (Input.GetKeyDown(KeyCode.H))
         //{
-        //    timer = Time.time;
-        //    CheckArea();
-        //    Debug.Log(timer);
+        //    timer = 0;
+        //    shouldHeal = true;
         //}
 
-        //if (Input.GetButtonUp("Health"))
+        //if (Input.GetKey(KeyCode.H))
         //{
-        //    timerB = Time.time;
-        //    Debug.Log(timerB + " SPACE " + timer);
-        //    if (timerB - timer >= 3)
+        //    if (shouldHeal)
         //    {
-        //        timer = 0;
-        //        timerB = 0;
-        //        CheckArea();
-        //        Debug.Log("Stopped");
+        //        timer += Time.deltaTime;
+        //        interval += Time.deltaTime;
+
+        //        if (interval >= 0.1f)
+        //        {
+        //            CheckArea();
+        //            interval = 0;
+        //        }
+
+        //        if (timer >= 3)
+        //            shouldHeal = false;
         //    }
         //}
+
+        //holding the button H for 3 seconds to increse the player's helth
+        if (Input.GetButtonDown("Health"))
+        {
+            timer = Time.time;
+        }
+        else if (Input.GetButton("Health"))
+        {
+            if (Time.time - timer > holdDur)
+            {
+                timer = float.PositiveInfinity;
+                CheckArea();
+            }
+        }
+        else
+        {
+            timer = float.PositiveInfinity;
+        }
     }
 
     private void CheckArea()
@@ -79,7 +77,7 @@ public class OverLap : MonoBehaviour
             
             if (player.CompareTag("Player"))
             {
-               increase.IncreaseHealth(50);
+               increase.IncreaseHealth(90);
             }
         }
     }
