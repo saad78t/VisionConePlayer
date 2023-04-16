@@ -8,22 +8,26 @@ public class PlayerScript : MonoBehaviour
     //private Dictionary<Item, int> itemDictionary = new Dictionary<Item, int>(); // Define dictionary like this
     private Dictionary<string, int> itemDictionary = new Dictionary<string, int>();
     public GameObject PicUpText;
+    private bool checkitem;
 
     private void Start()
     {
         PicUpText.SetActive(false);
+        checkitem = true;
     }
 
+    //other.gameObject.layer == 10
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.layer == 10) { 
+        if (other.gameObject.tag=="Tools") { 
             PicUpText.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E)) // First Check KEY cuz of optimization
             {
                 if (other.gameObject.TryGetComponent(out Item item))
                 {
                     item.PickUp();
-                    PicUpText.SetActive(false);
+                         PicUpText.SetActive(false);
+                    
                     if (itemDictionary.ContainsKey(item.type))
                     {
                         itemDictionary[item.type]++;

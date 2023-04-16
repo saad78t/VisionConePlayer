@@ -32,7 +32,10 @@ public class PicUpKey : MonoBehaviour
                 objectRawImageKey.enabled = true;
                 keyCollected = true;
                 Destroy(keyObject);
-                PicUpTextKey.SetActive(false);
+                if (keyObject)
+                {
+                    PicUpTextKey.SetActive(false);
+                }
             }
         }
     }
