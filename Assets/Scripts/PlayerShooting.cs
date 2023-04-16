@@ -10,18 +10,18 @@ public class PlayerShooting : MonoBehaviour
     public float fireRate = 0.25f;
     public float bulletSpeed = 20;
     private float nextBullet;
-    private Animator playerAnimator;
+    //private Animator playerAnimator;
 
     public void Awake()
     {
-        playerAnimator = GetComponent<Animator>();
+        //playerAnimator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            playerAnimator.SetBool("Fire", true);
+            //playerAnimator.SetBool("Fire", true);
             if(Time.time > nextBullet)
             {
                 nextBullet = Time.time + fireRate;
@@ -33,7 +33,7 @@ public class PlayerShooting : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            playerAnimator.SetBool("Fire", false);
+            //playerAnimator.SetBool("Fire", false);
         }
     }
 }
