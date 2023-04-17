@@ -19,7 +19,7 @@ public class PlayerScript : MonoBehaviour
     //other.gameObject.layer == 10
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag=="Tools") { 
+        if (other.gameObject.tag == "Tools") { 
             PicUpText.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E)) // First Check KEY cuz of optimization
             {

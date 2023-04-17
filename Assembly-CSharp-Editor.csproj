@@ -53,6 +53,8 @@
     <UnityVersion>2022.1.4f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
+    <Compile Include="Assets\JMO Assets\WarFX\Editor\CFX_SpawnSystemEditor.cs" />
     <Compile Include="Assets\Editor\FieldOfViewEditor.cs" />
   </ItemGroup>
   <ItemGroup>
