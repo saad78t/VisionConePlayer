@@ -53,6 +53,7 @@
     <UnityVersion>2022.1.4f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\PlayerShootingWithReloading.cs" />
     <Compile Include="Assets\Scripts\PicUpKey.cs" />
     <Compile Include="Assets\Scripts\Target.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Scripts\CFX_LightIntensityFade.cs" />
@@ -93,7 +94,7 @@
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Demo\Assets\WFX_Demo_New.cs" />
     <Compile Include="Assets\Scripts\OverLap.cs" />
-    <Compile Include="Assets\Scripts\PlayerShootingWithReloading.cs" />
+    <Compile Include="Assets\Scripts\AmmoPicUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

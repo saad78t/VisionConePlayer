@@ -15,7 +15,7 @@ public class PlayerShootingWithReloading : MonoBehaviour
     private Animator playerAnimator;
 
     public int maxAmmo = 10;
-    private int currentAmmo;
+    public int currentAmmo;
     public float reloadTime = 1f;
     private bool isReloading = false;
 
@@ -30,14 +30,14 @@ public class PlayerShootingWithReloading : MonoBehaviour
 
     private void Update()
     {
-        if (isReloading)
-            return;
+        //if (isReloading)
+        //    return;
 
-        if (currentAmmo <= 0f)
-        {
-            StartCoroutine(Reload());
-            return;
-        }
+        //if (currentAmmo <= 0f)
+        //{
+        //    StartCoroutine(Reload());
+        //    return;
+        //}
 
         if (Input.GetButton("Fire1") && Time.time >= nextBullet)
         {
@@ -47,25 +47,32 @@ public class PlayerShootingWithReloading : MonoBehaviour
 
     }
 
-    IEnumerator Reload()
-    {
-        isReloading = true;
-        Debug.Log("Reloading...");
-        //animator.SetBool("Reloading", true);
-        yield return new WaitForSeconds(reloadTime - .25f);
-        //animator.SetBool("Reloading", false);
-        yield return new WaitForSeconds(.25f);
-        currentAmmo = maxAmmo;
-        isReloading = false;
-    }
+    //IEnumerator Reload()
+    //{
+    //    isReloading = true;
+    //    Debug.Log("Reloading...");
+    //    //animator.SetBool("Reloading", true);
+    //    yield return new WaitForSeconds(reloadTime - .25f);
+    //    //animator.SetBool("Reloading", false);
+    //    yield return new WaitForSeconds(.25f);
+    //    currentAmmo = maxAmmo;
+    //    isReloading = false;
+    //}
 
 
     void Shoot()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            muzzleFlash.Play();
-            currentAmmo--;
+            if (currentAmmo > 0)
+            {
+                muzzleFlash.Play();
+                currentAmmo--;
+            }
+            else
+            {
+                return;
+            }
             ammoText.SetText(currentAmmo.ToString()+ "/"+ maxAmmo.ToString());
             GameObject bullet = Instantiate(bulletPrefab, fireSpawnPoint.position, Quaternion.identity);
             Destroy(bullet, 2f);
