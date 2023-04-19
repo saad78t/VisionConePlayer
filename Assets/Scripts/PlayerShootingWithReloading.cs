@@ -30,6 +30,8 @@ public class PlayerShootingWithReloading : MonoBehaviour
 
     private void Update()
     {
+        //ammoText.text = currentAmmo.ToString();
+        ammoText.SetText(currentAmmo.ToString() + " / " + maxAmmo.ToString());
         //if (isReloading)
         //    return;
 
@@ -73,7 +75,7 @@ public class PlayerShootingWithReloading : MonoBehaviour
             {
                 return;
             }
-            ammoText.SetText(currentAmmo.ToString()+ "/"+ maxAmmo.ToString());
+            
             GameObject bullet = Instantiate(bulletPrefab, fireSpawnPoint.position, Quaternion.identity);
             Destroy(bullet, 2f);
             bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
