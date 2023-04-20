@@ -13,6 +13,7 @@ public class PlayerShootingWithReloading : MonoBehaviour
     private float nextBullet;
     public ParticleSystem muzzleFlash;
     private Animator playerAnimator;
+    public AudioSource pistolAudio;
 
     public int maxAmmo = 10;
     public int currentAmmo;
@@ -26,11 +27,11 @@ public class PlayerShootingWithReloading : MonoBehaviour
     {
         //playerAnimator = GetComponent<Animator>();
         currentAmmo = maxAmmo;
+        pistolAudio.enabled = false;
     }
 
     private void Update()
     {
-        //ammoText.text = currentAmmo.ToString();
         ammoText.SetText(currentAmmo.ToString() + " / " + maxAmmo.ToString());
         //if (isReloading)
         //    return;
@@ -70,6 +71,8 @@ public class PlayerShootingWithReloading : MonoBehaviour
             {
                 muzzleFlash.Play();
                 currentAmmo--;
+                pistolAudio.enabled = true;
+                pistolAudio.Play();
             }
             else
             {
