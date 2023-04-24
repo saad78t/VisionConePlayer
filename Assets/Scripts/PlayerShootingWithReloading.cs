@@ -27,7 +27,7 @@ public class PlayerShootingWithReloading : MonoBehaviour
     {
         //playerAnimator = GetComponent<Animator>();
         currentAmmo = maxAmmo;
-        pistolAudio.enabled = false;
+        //pistolAudio.enabled = false;
     }
 
     private void Update()
@@ -71,7 +71,7 @@ public class PlayerShootingWithReloading : MonoBehaviour
             {
                 muzzleFlash.Play();
                 currentAmmo--;
-                pistolAudio.enabled = true;
+                //pistolAudio.enabled = true;
                 pistolAudio.Play();
             }
             else
