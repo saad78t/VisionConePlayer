@@ -22,15 +22,14 @@ public class Controller : MonoBehaviour {
 
         walkSpeed = moveSpeed;
         runSpeed = walkSpeed * 3;
-
     }
 
     void Update () {
-        playerMovements();
-        sprintPlayer();
+        PlayerMovements();
+        SprintPlayer();
     }
 
-    void playerMovements()
+    void PlayerMovements()
     {
         Vector3 mousePos = viewCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, viewCamera.transform.position.y));
         //transform.LookAt (mousePos + Vector3.up * transform.position.y);
@@ -51,7 +50,7 @@ public class Controller : MonoBehaviour {
     }
 
 
-    void sprintPlayer()
+    void SprintPlayer()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -74,10 +73,10 @@ public class Controller : MonoBehaviour {
                 SetRunning(false);
             }
         }
-        //else if (stamina < maxStamina)
-        //{
-        //    stamina += Time.deltaTime;
-        //}
+        else if (stamina < maxStamina)
+        {
+            stamina += Time.deltaTime;
+        }
     }
 
     void OnGUI()
