@@ -62,7 +62,14 @@ public class Controller : MonoBehaviour {
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
             SetRunning(false);
+
+           //To clear the time line bar
+            //staminaTexture = new Texture2D(1, 1);
+            //staminaTexture.SetPixel(0, 0, Color.clear);
+            //staminaTexture.Apply();
+        }
 
         if (isRunning)
         {
