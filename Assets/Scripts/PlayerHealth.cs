@@ -46,7 +46,9 @@ public class PlayerHealth : MonoBehaviour
         {
             Health += amountOfHealth;
             health_Slider.value = Health;
-        }else
+            Health = MAX_HEALTH;
+        }
+        else 
         {
             Debug.Log("Health if full");
         }
