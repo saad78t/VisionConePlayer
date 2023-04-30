@@ -9,7 +9,9 @@ public class Controller : MonoBehaviour {
 	Camera viewCamera;
 	Vector3 velocity;
 
-    float stamina = 5, maxStamina = 5;
+    float stamina = 3;
+    float maxStamina = 3;
+    
     float walkSpeed, runSpeed;
     bool isRunning;
     Rect staminaRect;
@@ -21,12 +23,17 @@ public class Controller : MonoBehaviour {
 		viewCamera = Camera.main;
 
         walkSpeed = moveSpeed;
-        runSpeed = walkSpeed * 3;
+        runSpeed = walkSpeed * 1.5f; //1.5 multiplier to sprint instead of 3x
     }
 
-    void Update () {
-        PlayerMovements();
-        SprintPlayer();
+    void Update()
+    {
+       PlayerMovements();
+        StartCoroutine(SprintPlayer());
+    }
+
+    void FixedUpdate() {
+         rigid.MovePosition(rigid.position + velocity * Time.fixedDeltaTime);
     }
 
     void PlayerMovements()
@@ -38,10 +45,6 @@ public class Controller : MonoBehaviour {
         velocity = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized * moveSpeed;
     }
 
-    void FixedUpdate() {
-		rigid.MovePosition (rigid.position + velocity * Time.fixedDeltaTime);
-	}
-
 
     void SetRunning(bool isRunning)
     {
@@ -50,7 +53,7 @@ public class Controller : MonoBehaviour {
     }
 
 
-    void SprintPlayer()
+    IEnumerator SprintPlayer()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -64,8 +67,8 @@ public class Controller : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             SetRunning(false);
-
-           //To clear the time line bar
+           
+            //To clear the time line bar
             //staminaTexture = new Texture2D(1, 1);
             //staminaTexture.SetPixel(0, 0, Color.clear);
             //staminaTexture.Apply();
@@ -82,7 +85,10 @@ public class Controller : MonoBehaviour {
         }
         else if (stamina < maxStamina)
         {
-            stamina += Time.deltaTime;
+            yield return new WaitForSeconds(1);
+            
+            //stamina += Time.deltaTime;
+            stamina = Mathf.Clamp(stamina + Time.deltaTime, 0, maxStamina);
         }
     }
 

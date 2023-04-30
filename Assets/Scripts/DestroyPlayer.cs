@@ -22,21 +22,21 @@ public class DestroyPlayer : MonoBehaviour
     }
 
     //OnTriggerEnter: To avoid displacement of the player when the bullet hit him
-    private void OnTriggerEnter(Collider collision)
-    {
-        if (collision.gameObject.CompareTag("EnemyBullet"))
-        {
-            // Destory bullet
-            Destroy(collision.gameObject);
-            playerHealth.DecreaseHealth(10);
-            //flash.SetBool("flashEnabled", true);
-            flash.SetTrigger("flashEnabled t");
-            //    redSplaterImage.enabled = true;
-        }
-        //else
-        //{
-        //    flash.SetBool("flashEnabled", false);
-        //}
-    }
+    //private void OnTriggerEnter(Collider collision)
+    //{
+    //    if (collision.gameObject.CompareTag("EnemyBullet"))
+    //    {
+    //        // Destory bullet
+    //        Destroy(collision.gameObject);
+    //        playerHealth.DecreaseHealth(10);
+    //        //flash.SetBool("flashEnabled", true);
+    //        flash.SetTrigger("flashEnabled t");
+    //        //    redSplaterImage.enabled = true;
+    //    }
+    //    //else
+    //    //{
+    //    //    flash.SetBool("flashEnabled", false);
+    //    //}
+    //}
 
 }

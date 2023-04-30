@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
     private int Health;
     private const int MAX_HEALTH = 100;
     public Rigidbody rd ;
-
+    public Animator flash;
 
     private void Start()
     {
@@ -52,6 +52,25 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("Health if full");
         }
+    }
+
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyBullet"))  //في حالة الضرب بالرصاص
+       /* if (collision.gameObject.CompareTag("Enemy"))  *///في حالة اصطدام جسم اللاعب بالعدو
+        {
+            // Destory bullet
+            Destroy(collision.gameObject);
+            DecreaseHealth(10);
+            //flash.SetBool("flashEnabled", true);
+            flash.SetTrigger("flashEnabled t");
+            //    redSplaterImage.enabled = true;
+        }
+        //else
+        //{
+        //    flash.SetBool("flashEnabled", false);
+        //}
     }
 
     //private void OnTriggerEnter(Collider other)
