@@ -11,7 +11,8 @@ public class EquipItem : MonoBehaviour
     public RawImage ItemImage;
     bool disabledItem = false;
     public bool ItemCllected;
-    float Timer , MaxTimer = 15;
+    float Timer , MaxTimer = 9;
+    int counter = 0;
 
     void Start()
     {
@@ -61,10 +62,7 @@ public class EquipItem : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 EquipedItem();
-                disabledItem = true;
-                Item.SetActive(false);
-
-                //ItemCounter.PickedUpItems();
+                //CollectedItem.gameObject.SetActive(false);
             }
             if (ItemCllected)
             {
@@ -84,10 +82,11 @@ public class EquipItem : MonoBehaviour
 
         if (Input.GetKey(KeyCode.F) && ItemCllected)
         {
-            Item.SetActive(true);
-            //Item.GetComponent<MeshCollider>().enabled = true;
-            Debug.Log("DONE");
             DropItem();
+            ItemCllected = false;
+            //counter++;
+            //Debug.Log(" + " + counter);
+            
         }
     }
 
