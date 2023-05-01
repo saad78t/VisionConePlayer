@@ -60,7 +60,7 @@ public class Controller : MonoBehaviour {
             SetRunning(true);
             staminaRect = new Rect(Screen.width / 10, Screen.height * 9 / 10, Screen.width / 3, Screen.height / 50);
             staminaTexture = new Texture2D(1, 1);
-            staminaTexture.SetPixel(0, 0, Color.white);
+            staminaTexture.SetPixel(0, 0, Color.green);
             staminaTexture.Apply();
         }
 
@@ -89,6 +89,12 @@ public class Controller : MonoBehaviour {
             
             //stamina += Time.deltaTime;
             stamina = Mathf.Clamp(stamina + Time.deltaTime, 0, maxStamina);
+			 if (stamina == maxStamina)
+            {
+                yield return new WaitForSeconds(1);
+                staminaTexture.SetPixel(0, 0, Color.clear);
+                staminaTexture.Apply();
+            }
         }
     }
 
