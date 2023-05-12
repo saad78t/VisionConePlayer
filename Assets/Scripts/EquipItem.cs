@@ -27,7 +27,7 @@ public class EquipItem : MonoBehaviour
     
     void Update()
     {
-        
+
     }
 
     void DropItem()
@@ -47,6 +47,7 @@ public class EquipItem : MonoBehaviour
         Item.GetComponent<MeshCollider>().enabled = false;
         Item.transform.SetParent(CollectedItem);
         ItemImage.enabled = true;
+        
         ItemCllected = true;
     }
 
@@ -62,7 +63,7 @@ public class EquipItem : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 EquipedItem();
-                //CollectedItem.gameObject.SetActive(false);
+                Item.SetActive(false);
             }
             if (ItemCllected)
             {
@@ -78,16 +79,17 @@ public class EquipItem : MonoBehaviour
         {
             Drop_TXT.SetActive(false);
         }
-        
 
         if (Input.GetKey(KeyCode.F) && ItemCllected)
         {
+            //Item.SetActive(true);
             DropItem();
             ItemCllected = false;
             //counter++;
             //Debug.Log(" + " + counter);
-            
+
         }
+
     }
 
     private void OnTriggerExit(Collider other)

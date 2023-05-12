@@ -7,27 +7,40 @@ public class PlayerScript : MonoBehaviour
 {
     //private Dictionary<Item, int> itemDictionary = new Dictionary<Item, int>(); // Define dictionary like this
     private Dictionary<string, int> itemDictionary = new Dictionary<string, int>();
-    public GameObject PicUpText;
-    private bool checkitem;
+    public GameObject PicUpText, EscapeText;
+
+   
+    public bool Hissi = false;
+    public TMPro.TextMeshProUGUI itemName;
+    int number = 5;
 
     private void Start()
     {
         PicUpText.SetActive(false);
-        checkitem = true;
+        EscapeText.SetActive(false);
+        itemName.SetText("");
     }
+
+
 
     //other.gameObject.layer == 10
     private void OnTriggerStay(Collider other)
     {
+        
         if (other.gameObject.tag == "Tools") { 
             PicUpText.SetActive(true);
+            
             if (Input.GetKeyDown(KeyCode.E)) // First Check KEY cuz of optimization
             {
                 if (other.gameObject.TryGetComponent(out Item item))
                 {
                     item.PickUp();
-                         PicUpText.SetActive(false);
-                    
+                    number--;
+                    PicUpText.SetActive(false);
+
+                    itemName.SetText("There are " + number.ToString() + " item/s left");
+                    if (number <= 0) itemName.SetText("");
+
                     if (itemDictionary.ContainsKey(item.type))
                     {
                         itemDictionary[item.type]++;
@@ -37,8 +50,10 @@ public class PlayerScript : MonoBehaviour
                     {
                         itemDictionary.Add(item.type, 1);
                     }
-                    if (itemDictionary[item.type] == 2) // check count of picked item.
+                    if (itemDictionary[item.type] == 5) // check count of picked item.
                     {
+                        EscapeText.SetActive(true);
+                        Hissi = true;
                         Debug.Log($"Element: ({item.name}) have collected");
                     }
                 }
