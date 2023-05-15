@@ -6,14 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class SwitchScene : MonoBehaviour
 {
-     PlayerScript num;
-
+    PlayerScript num;
+    FadeInOut fade;
     public GameObject Collecting_TXT;
-    
+
 
     private void Start()
     {
         Collecting_TXT.SetActive(false);
+        fade = FindObjectOfType<FadeInOut>();
+    }
+
+    public IEnumerator ChangeScene()
+    {
+        fade.FadeIn();
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(1);
     }
 
     private void OnTriggerStay(Collider other)
@@ -21,10 +29,10 @@ public class SwitchScene : MonoBehaviour
         num = other.GetComponent<PlayerScript>();
        
         Collecting_TXT.SetActive(true);
-        if (num.Hissi)
+        if (other.gameObject.tag == "Player" && num.Hissi)
         {
             Collecting_TXT.SetActive(false);
-            SceneManager.LoadScene(1);
+            StartCoroutine(ChangeScene());
         }
     }
 
