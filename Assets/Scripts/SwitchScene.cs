@@ -27,8 +27,8 @@ public class SwitchScene : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         num = other.GetComponent<PlayerScript>();
-       
-        Collecting_TXT.SetActive(true);
+        if (other.gameObject.tag != "Bullet") //To prevent the message from being displayed when the bullet hits the elevator
+            Collecting_TXT.SetActive(true);
         if (other.gameObject.tag == "Player" && num.Hissi)
         {
             Collecting_TXT.SetActive(false);
