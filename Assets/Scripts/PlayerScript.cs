@@ -38,7 +38,7 @@ public class PlayerScript : MonoBehaviour
                     number--;
                     PicUpText.SetActive(false);
 
-                    itemName.SetText("There are " + number.ToString() + " item/s left");
+                    itemName.SetText("There are/is " + number.ToString() + " item/s left");
                     if (number <= 0) itemName.SetText("");
 
                     if (itemDictionary.ContainsKey(item.type))

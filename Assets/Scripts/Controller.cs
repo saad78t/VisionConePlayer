@@ -105,4 +105,16 @@ public class Controller : MonoBehaviour {
         staminaRect.width = rectWidth;
         GUI.DrawTexture(staminaRect, staminaTexture);
     }
+
+    //this for FullAutomaticDoor
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "Door")
+        {
+            if (other.GetComponent<AutomaticDoor>().Moving == false)
+            {
+                other.GetComponent<AutomaticDoor>().Moving = true;
+            }
+        }
+    }
 }
