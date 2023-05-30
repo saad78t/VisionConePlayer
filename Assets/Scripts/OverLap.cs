@@ -16,6 +16,8 @@ public class OverLap : MonoBehaviour
     public PlayerHealth increase;
     public GameObject HealthText;
 
+    int counter = 0;
+
     void Start()
     {
         HealthText.SetActive(false);
@@ -74,11 +76,17 @@ public class OverLap : MonoBehaviour
         
         foreach(var player in Players)
         {
-            
-            if (player.CompareTag("Player"))
+            //counter is to allow the player get health just two times
+            if (player.CompareTag("Player") && counter <= 2)
             {
                increase.IncreaseHealth(90);
+                counter++;
+                Debug.Log("CHECKING HEALTH COUNTER "+ counter);
             }
+            //if(counter >= 2)
+            //{
+            //    increase.IncreaseHealth(0);
+            //}
         }
     }
 

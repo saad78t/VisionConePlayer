@@ -29,7 +29,7 @@ public class SwitchScene : MonoBehaviour
         num = other.GetComponent<PlayerScript>();
         if (other.gameObject.tag != "Bullet") //To prevent the message from being displayed when the bullet hits the elevator
             Collecting_TXT.SetActive(true);
-        if (other.gameObject.tag == "Player" && num.Hissi)
+        if (other.gameObject.tag == "Player" && num != null && num.Hissi)
         {
             Collecting_TXT.SetActive(false);
             StartCoroutine(ChangeScene());

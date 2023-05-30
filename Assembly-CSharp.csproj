@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\FieldOfView.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Spawn System\CFX_SpawnSystem.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
+    <Compile Include="Assets\Scripts\GreenAutomaticDoor.cs" />
     <Compile Include="Assets\Scripts\LineRender.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Scripts\WFX_BulletHoleDecal.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets\Scripts\AmmoPicUp.cs" />
     <Compile Include="Assets\Scripts\DestroyEnemy.cs" />
     <Compile Include="Assets\Scripts\Controller.cs" />
+    <Compile Include="Assets\Scripts\AutomaticDoor.cs" />
     <Compile Include="Assets\Scripts\TriggerDoorController.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\Scripts\PlayerTool.cs" />
@@ -101,8 +103,7 @@
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Demo\Assets\WFX_Demo_New.cs" />
     <Compile Include="Assets\Scripts\OverLap.cs" />
-    <Compile Include="Assets\Scripts\AutomaticDoor.cs" />
-    <Compile Include="Assets\Scripts\GreenAutomaticDoor.cs" />
+    <Compile Include="Assets\FullAutoDoor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

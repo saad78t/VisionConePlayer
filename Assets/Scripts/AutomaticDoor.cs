@@ -93,22 +93,22 @@ public class AutomaticDoor : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, goalPos, speed * Time.deltaTime);
         }
-        else
-        {
-            if (opening)
-            {
-                delay += Time.deltaTime;
-                if (delay > 1.5f)
-                {
-                    opening = false;
-                }
-            }
-            else
-            {
-                moving = false;
-                opening = true;
-            }
-        }
+        //else
+        //{
+        //    if (opening)
+        //    {
+        //        delay += Time.deltaTime;
+        //        if (delay > 1.5f)
+        //        {
+        //            opening = false;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        moving = false;
+        //        opening = true;
+        //    }
+        //}
     }
 
     public bool Moving

@@ -10,9 +10,9 @@ public class GreenAutomaticDoor : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player" ))
         {
-            doorAnim.ResetTrigger("close");
+            doorAnim.ResetTrigger("close");//&& key.keyCollected == true
             doorAnim.SetTrigger("open");
             //objectMaterial.GetComponent<MeshRenderer>().material = material;
         }

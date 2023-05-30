@@ -107,14 +107,35 @@ public class Controller : MonoBehaviour {
     }
 
     //this for FullAutomaticDoor
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.tag == "Door")
-        {
-            if (other.GetComponent<AutomaticDoor>().Moving == false)
-            {
-                other.GetComponent<AutomaticDoor>().Moving = true;
-            }
-        }
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.tag == "Door" && Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        if (other.GetComponent<AutomaticDoor>().Moving == false)
+    //        {
+    //            other.GetComponent<AutomaticDoor>().Moving = true;
+    //        }
+    //    }
+    //}
+    //public PicUpKey key;
+    //public Animator doorAnim;
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.tag == "Door" && key.keyCollected == true)
+    //    {
+    //        Debug.Log(other.gameObject.tag);
+    //        doorAnim.ResetTrigger("close");//
+    //        doorAnim.SetTrigger("open");
+    //    }
+    //}
+
+    //void OnTriggerExit(Collider other)
+    //{
+    //    if (other.tag == "Door" && key.keyCollected == true)
+    //    {
+    //        doorAnim.ResetTrigger("open");
+    //        doorAnim.SetTrigger("close");
+    //        //objectMaterial.GetComponent<MeshRenderer>().material = defaultMaterial;
+    //    }
+    //}
 }
