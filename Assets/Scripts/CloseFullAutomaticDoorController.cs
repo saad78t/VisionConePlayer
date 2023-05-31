@@ -6,40 +6,31 @@ public class CloseFullAutomaticDoorController : MonoBehaviour
 {
     public AutomaticDoor[] doors;
 
-    private void Update()
-    {
-        
-    }
+
     private void OnTriggerStay(Collider other)
     {
 
         if (other.tag == "Player")
         {
-            
             foreach (var door in doors)
             {
+                if (door.GetComponent<AutomaticDoor>().Moving == false)
+                {
+                    door.GetComponent<AutomaticDoor>().Moving = true;
+                }
+
                 if (door.GetComponent<AutomaticDoor>().opening)
                 {
-                    Debug.Log("PLAYER CAME HERE");
-                    //door.GetComponent<AutomaticDoor>().delay += Time.deltaTime;
-                    //if (door.GetComponent<AutomaticDoor>().delay > 5f)
-                    //{
-                        door.GetComponent<AutomaticDoor>().opening = false;
-
-                    //door.GetComponent<AutomaticDoor>().delay= 0f;
-                    //}
+                    door.GetComponent<AutomaticDoor>().opening = false;
                 }
                 else
                 {
                     door.GetComponent<AutomaticDoor>().moving = false;
                     door.GetComponent<AutomaticDoor>().opening = true;
                 }
-
-            }
+            }       
         }
     }
-    
-
 }
 
 

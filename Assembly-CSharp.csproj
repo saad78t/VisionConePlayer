@@ -104,7 +104,6 @@
     <Compile Include="Assets\Scripts\SwitchScene.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Demo\Assets\WFX_Demo_New.cs" />
-    <Compile Include="Assets\Scripts\CloseFullAutomaticDoor.cs" />
     <Compile Include="Assets\Scripts\OverLap.cs" />
   </ItemGroup>
   <ItemGroup>
