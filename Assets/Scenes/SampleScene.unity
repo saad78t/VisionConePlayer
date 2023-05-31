@@ -1285,10 +1285,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 188636774}
+  - component: {fileID: 188636779}
   - component: {fileID: 188636778}
   - component: {fileID: 188636777}
   - component: {fileID: 188636776}
-  - component: {fileID: 188636779}
   m_Layer: 0
   m_Name: CloseSensor
   m_TagString: Untagged

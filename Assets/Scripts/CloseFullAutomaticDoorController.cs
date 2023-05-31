@@ -9,26 +9,24 @@ public class CloseFullAutomaticDoorController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-
         if (other.tag == "Player")
         {
             foreach (var door in doors)
             {
-                if (door.GetComponent<AutomaticDoor>().Moving == false)
-                {
-                    door.GetComponent<AutomaticDoor>().Moving = true;
-                }
-
                 if (door.GetComponent<AutomaticDoor>().opening)
                 {
                     door.GetComponent<AutomaticDoor>().opening = false;
                 }
-                else
-                {
-                    door.GetComponent<AutomaticDoor>().moving = false;
-                    door.GetComponent<AutomaticDoor>().opening = true;
-                }
             }       
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        foreach (var door in doors)
+        {
+            door.GetComponent<AutomaticDoor>().moving = false;
+            door.GetComponent<AutomaticDoor>().opening = true;
         }
     }
 }
