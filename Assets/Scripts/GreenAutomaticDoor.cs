@@ -5,8 +5,8 @@ using UnityEngine;
 public class GreenAutomaticDoor : MonoBehaviour
 {
     public Animator doorAnim;
-    //public GameObject objectMaterial;
-    //public Material material, defaultMaterial;
+    public GameObject objectMaterial;
+    public Material material, defaultMaterial;
 
     void OnTriggerEnter(Collider other)
     {
@@ -14,7 +14,7 @@ public class GreenAutomaticDoor : MonoBehaviour
         {
             doorAnim.ResetTrigger("close");//&& key.keyCollected == true
             doorAnim.SetTrigger("open");
-            //objectMaterial.GetComponent<MeshRenderer>().material = material;
+            objectMaterial.GetComponent<MeshRenderer>().material = material;
         }
     }
 
@@ -24,7 +24,7 @@ public class GreenAutomaticDoor : MonoBehaviour
         {
             doorAnim.ResetTrigger("open");
             doorAnim.SetTrigger("close");
-            //objectMaterial.GetComponent<MeshRenderer>().material =  defaultMaterial;
+            objectMaterial.GetComponent<MeshRenderer>().material =  defaultMaterial;
         }
     }
 }

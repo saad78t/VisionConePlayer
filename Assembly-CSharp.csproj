@@ -86,6 +86,7 @@
     <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\particleAttractorMove.cs" />
     <Compile Include="Assets\Scripts\DestroyPlayer.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Scripts\WFX_LightFlicker.cs" />
+    <Compile Include="Assets\FullAutoDoor.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\PicUpTools.cs" />
     <Compile Include="Assets\Scripts\AmmoPicUp.cs" />
@@ -98,12 +99,13 @@
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Particle Attractor by Moonflower Carnivore\Scripts\rotation.cs" />
     <Compile Include="Assets\Scripts\PlayerShooting.cs" />
+    <Compile Include="Assets\Scripts\CloseFullAutomaticDoorController.cs" />
     <Compile Include="Assets\Scripts\EquipItem.cs" />
     <Compile Include="Assets\Scripts\SwitchScene.cs" />
     <Compile Include="Assets\Scripts\PlayerScript.cs" />
     <Compile Include="Assets\JMO Assets\WarFX\Demo\Assets\WFX_Demo_New.cs" />
+    <Compile Include="Assets\Scripts\CloseFullAutomaticDoor.cs" />
     <Compile Include="Assets\Scripts\OverLap.cs" />
-    <Compile Include="Assets\FullAutoDoor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

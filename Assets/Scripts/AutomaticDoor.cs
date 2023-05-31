@@ -62,10 +62,11 @@ public class AutomaticDoor : MonoBehaviour
     public Vector3 endPos;
     public float speed = 1.0f;
 
-    private bool opening = true;
+    public bool opening = true;
     private Vector3 startPos;
     private float delay = 0.0f;
-    private bool moving = false;
+    public bool moving = false;
+
     void Start()
     {
         startPos = transform.position;
@@ -98,9 +99,10 @@ public class AutomaticDoor : MonoBehaviour
         //    if (opening)
         //    {
         //        delay += Time.deltaTime;
-        //        if (delay > 1.5f)
+        //        if (delay > 1.0f)
         //        {
         //            opening = false;
+        //            delay = 0f;
         //        }
         //    }
         //    else
