@@ -19,11 +19,13 @@ public class FullAutoDoor : MonoBehaviour
     //}
 
     public AutomaticDoor [] doors;
+    CloseFullAutomaticDoorController refrence;
+
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player" && Input.GetKeyDown(KeyCode.E))
         {
-            foreach(var door in doors)
+            foreach (var door in doors)
             {
                if( door.GetComponent<AutomaticDoor>().Moving == false)
                {

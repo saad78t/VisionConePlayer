@@ -734,6 +734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 64997586}
+  - component: {fileID: 64997587}
   m_Layer: 0
   m_Name: FullAutomaticDoor
   m_TagString: Untagged
@@ -760,6 +761,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &64997587
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64997585}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43b6ddc7504492342a6f3496a9f76cc8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &69740170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1304,8 +1325,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188636773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.18, y: 0.74, z: -5.61}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.18, y: 0.74, z: -3.9}
+  m_LocalScale: {x: -3.7200031, y: 1, z: 2.680065}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 64997586}
@@ -1386,9 +1407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bea92421602107e4da13a5a15977c50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doors:
-  - {fileID: 1578061684}
-  - {fileID: 1207009816}
+  animator: {fileID: 64997587}
 --- !u!1 &196979967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3763,7 +3782,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590067493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.18, y: 0.74, z: -2.09}
+  m_LocalPosition: {x: -2.92, y: 1.6, z: -2.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6892,7 +6911,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207009810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.32, y: 1.51, z: -4.25}
+  m_LocalPosition: {x: 5.32, y: 1.51, z: 1.08}
   m_LocalScale: {x: 0.19171518, y: 2.825044, z: 4.3589}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6988,7 +7007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 5.32, y: 1.51, z: 1.08}
-  speed: 3
+  speed: 0.1
   opening: 1
   moving: 0
 --- !u!1 &1213206705
@@ -8858,7 +8877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578061679}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.13, y: 1.51, z: -4.25}
+  m_LocalPosition: {x: 5.13, y: 1.51, z: -8}
   m_LocalScale: {x: 0.19171518, y: 2.825044, z: 4.3589}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8878,7 +8897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPos: {x: 5.13, y: 1.51, z: -8}
-  speed: 3
+  speed: 0.1
   opening: 1
   moving: 0
 --- !u!65 &1578061685
