@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour
    
     public bool Hissi = false;
     public TMPro.TextMeshProUGUI itemName;
-    int number = 5;
+    int number = 4;
 
     private void Start()
     {
@@ -50,7 +50,7 @@ public class PlayerScript : MonoBehaviour
                     {
                         itemDictionary.Add(item.type, 1);
                     }
-                    if (itemDictionary[item.type] == 5) // check count of picked item.
+                    if (itemDictionary[item.type] == 4) // check count of picked item.
                     {
                         EscapeText.SetActive(true);
                         Hissi = true;
