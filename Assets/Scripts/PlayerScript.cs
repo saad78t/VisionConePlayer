@@ -53,6 +53,7 @@ public class PlayerScript : MonoBehaviour
                     if (itemDictionary[item.type] == 4) // check count of picked item.
                     {
                         EscapeText.SetActive(true);
+                        PicUpText.SetActive(false);
                         Hissi = true;
                         Debug.Log($"Element: ({item.name}) have collected");
                     }
