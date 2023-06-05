@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.UI;
 
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static event Action onPlayerDeath;
     public Slider health_Slider;
     private int Health;
     private const int MAX_HEALTH = 100;
@@ -34,7 +36,7 @@ public class PlayerHealth : MonoBehaviour
             //Player is dead
             Destroy(gameObject);
             Debug.Log("you are dead");
-
+            onPlayerDeath?.Invoke();
             //to do death animator and show gameover screen
             //animator.SetBool(IsDead, true);
         }
