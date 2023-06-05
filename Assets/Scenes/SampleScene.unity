@@ -2124,9 +2124,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1565870762}
-  - {fileID: 681884259}
-  - {fileID: 1469604355}
-  - {fileID: 872635118}
   m_Father: {fileID: 1354939561}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4461,7 +4458,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 514996037}
-  m_Father: {fileID: 308210915}
+  m_Father: {fileID: 1565870762}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4515,7 +4512,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1354939565}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: RestartLevel
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5531,7 +5528,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 102947120}
-  m_Father: {fileID: 308210915}
+  m_Father: {fileID: 1565870762}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -8457,6 +8454,7 @@ GameObject:
   - component: {fileID: 1354939562}
   - component: {fileID: 1354939564}
   - component: {fileID: 1354939565}
+  - component: {fileID: 1354939566}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8621,6 +8619,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverMenu: {fileID: 308210914}
+  BoxBorder: {fileID: 2800000, guid: f4d9357f98426b44498667926e52701f, type: 3}
+  GameOverFade: {fileID: 1354939566}
+--- !u!114 &1354939566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354939557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ec27e841433ae24b85c441480b87ff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 1565870765}
+  fadeIn: 0
+  fadeOut: 0
+  TimeToFade: 1
 --- !u!1 &1355888129
 GameObject:
   m_ObjectHideFlags: 0
@@ -8898,13 +8914,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 308210915}
+  m_Father: {fileID: 1565870762}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 11, y: 255}
-  m_SizeDelta: {x: 288.46045, y: 54.086304}
+  m_SizeDelta: {x: -1471.5396, y: -995.9137}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1469604356
 MonoBehaviour:
@@ -9427,6 +9443,7 @@ GameObject:
   - component: {fileID: 1565870762}
   - component: {fileID: 1565870764}
   - component: {fileID: 1565870763}
+  - component: {fileID: 1565870765}
   m_Layer: 5
   m_Name: MenuBackGround
   m_TagString: Untagged
@@ -9445,7 +9462,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 681884259}
+  - {fileID: 1469604355}
+  - {fileID: 872635118}
   m_Father: {fileID: 308210915}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9492,6 +9512,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565870761}
   m_CullTransparentMesh: 1
+--- !u!225 &1565870765
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565870761}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1577727240
 GameObject:
   m_ObjectHideFlags: 0
