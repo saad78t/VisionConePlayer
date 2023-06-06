@@ -5,52 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject gameOverMenu, pauseGame;
-    bool isPaused;
+    public GameObject gameOverMenu;
     public Texture2D BoxBorder;
 
-    public FadeInOut GameOverFade;
-    public CanvasGroup pauseWindow;
-    public float TimeToFade = 1f;
-    public bool fadeIn = false;
-    public bool fadeOut = false;
-
-    bool disableEscapeButton;
+     FadeInOut GameOverFade;
 
     private void Start()
     {
-        //gameOverMenu.SetActive(false);
-        isPaused = false;
-        disableEscapeButton = false;
-    }
-
-    private void Update()
-    {
-        StartCoroutine(PauseGame());
-        if (fadeIn == true)
-        {
-            if (pauseWindow.alpha < 1)
-            {
-                pauseWindow.alpha += TimeToFade * Time.deltaTime;
-                if (pauseWindow.alpha >= 1)
-                {
-                    fadeIn = false;
-                }
-            }
-        }
-
-        if (fadeOut == true)
-        {
-            if (pauseWindow.alpha >= 0)
-            {
-                pauseWindow.alpha -= TimeToFade * Time.deltaTime;
-                if (pauseWindow.alpha == 0)
-                {
-                    fadeOut = false;
-                }
-            }
-        }
-
+        GameOverFade = GetComponent<FadeInOut>();
     }
 
     private void OnEnable()
@@ -87,29 +49,6 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
-    IEnumerator PauseGame()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) )
-        {
-            isPaused = !isPaused;
-            if (isPaused && !disableEscapeButton)
-            {
-                FadeIn();
-                yield return new WaitForSeconds(1);
-                Time.timeScale = 0;
-                disableEscapeButton = true;
-            }
-            if (!isPaused && disableEscapeButton)
-            {
-                Time.timeScale = 1;
-                FadeOut();
-                yield return new WaitForSeconds(1);
-                disableEscapeButton = false;
-            }
-        }
-    }
-
-
     //void OnGUI()
     //{
     //    GUIStyle headStyle = new GUIStyle();
@@ -124,14 +63,5 @@ public class UIManager : MonoBehaviour
     //    }
     //}
 
-    public void FadeIn()
-    {
-        fadeIn = true;
-    }
-
-    public void FadeOut()
-    {
-        fadeOut = true;
-    }
 
 }
